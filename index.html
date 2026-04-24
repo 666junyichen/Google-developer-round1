@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XOXO Gossip Girl</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section id="intro" class="intro-screen" aria-label="Invitation">
+      <div class="spotlight" aria-hidden="true"></div>
+      <div class="intro-copy">
+        <p class="script whisper">spotted</p>
+        <h1>you have mail</h1>
+        <button class="envelope-button js-enter" type="button" aria-label="Open invitation">
+          <img src="assets/envelope.png" alt="">
+        </button>
+      </div>
+    </section>
+
+    <section id="home" class="landing page-section" aria-label="Landing page">
+      <nav class="nav-bar" aria-label="Primary navigation">
+        <button class="nav-pill" type="button" data-target="home">Home</button>
+        <button class="nav-pill" type="button" data-target="tea">Tea</button>
+        <button class="nav-pill" type="button" data-target="about">About</button>
+      </nav>
+
+      <div class="hero-envelope-wrap">
+        <button class="hero-envelope js-tea" type="button" aria-label="Open the tea">
+          <img src="assets/envelope.png" alt="">
+        </button>
+      </div>
+
+      <div class="landing-title" aria-label="XOXO Gossip Girl">
+        <span class="xoxo">XOXO</span>
+        <span class="gossip script">gossip girl</span>
+      </div>
+    </section>
+
+    <section id="tea" class="tea-section page-section" aria-label="Gossip notes">
+      <div class="eyes" aria-hidden="true">
+        <div class="eye"><span class="pupil"></span></div>
+        <div class="eye"><span class="pupil"></span></div>
+      </div>
+
+      <div class="tea-stage">
+        <article class="paper-note drag-item note-left">
+          <p>serena was seen leaving the party before midnight.</p>
+        </article>
+
+        <button class="gossip-envelope drag-item" type="button" data-note="note-a" aria-label="Open gossip note one">
+          <img src="assets/envelope.png" alt="">
+        </button>
+        <article id="note-a" class="paper-note hidden-note">
+          <p>little secret, big city. somebody skipped class for a rooftop brunch.</p>
+        </article>
+
+        <button class="gossip-envelope drag-item envelope-two" type="button" data-note="note-b" aria-label="Open gossip note two">
+          <img src="assets/envelope.png" alt="">
+        </button>
+        <article id="note-b" class="paper-note hidden-note">
+          <p>queen bee alert: the headband is back and so is the drama.</p>
+        </article>
+
+        <button class="gossip-envelope drag-item envelope-three" type="button" data-note="note-c" aria-label="Open gossip note three">
+          <img src="assets/envelope.png" alt="">
+        </button>
+        <article id="note-c" class="paper-note hidden-note">
+          <p>one text, three screenshots, zero chill. upper east side classics.</p>
+        </article>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>you know you love me, xoxo gossip girl</span>
+          <span>you know you love me, xoxo gossip girl</span>
+          <span>you know you love me, xoxo gossip girl</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about page-section" aria-label="About">
+      <nav class="nav-bar about-nav" aria-label="Secondary navigation">
+        <button class="nav-pill" type="button" data-target="home">Home</button>
+        <button class="nav-pill" type="button" data-target="tea">Tea</button>
+        <button class="nav-pill" type="button" data-target="about">About</button>
+      </nav>
+
+      <div class="phone-scene">
+        <img class="phone" src="assets/phone.jpg" alt="Nokia phone">
+        <div class="phone-screen">
+          <p class="phone-text" aria-live="polite"></p>
+          <span class="cursor" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

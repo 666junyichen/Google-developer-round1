@@ -1,0 +1,457 @@
+@font-face {
+  font-family: "Bibliophile";
+  src: url("assets/fonts/BibliophileScript-Regular-D8DTnNEq.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Nokia";
+  src: url("assets/fonts/nokiafc22.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "RightGrotesk";
+  src: url("assets/fonts/PPRightGroteskMono-Fine-BidfrfbY.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Oskon";
+  src: url("assets/fonts/ZTBrosOskon90s-Regular-CROKvpw6.otf") format("opentype");
+}
+
+:root {
+  --navy: #000751;
+  --cream: #fffcf6;
+  --blue: #0015ff;
+  --pill: #d9dcff;
+  --paper: #fff9ec;
+  --ink: #101338;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--blue);
+  background: var(--cream);
+  font-family: "Oskon", "Trebuchet MS", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+button {
+  font: inherit;
+}
+
+.script {
+  font-family: "Bibliophile", "Brush Script MT", cursive;
+}
+
+.page-section {
+  min-height: 100vh;
+  position: relative;
+}
+
+.intro-screen {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background: var(--navy);
+}
+
+.spotlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle 190px at var(--x, 50%) var(--y, 50%), transparent 0 44%, rgba(0, 7, 81, 0.96) 46% 100%);
+  z-index: 2;
+}
+
+.intro-copy {
+  text-align: center;
+  z-index: 1;
+}
+
+.whisper {
+  margin: 0;
+  font-size: clamp(4rem, 12vw, 10rem);
+  line-height: 0.8;
+}
+
+.intro-copy h1 {
+  margin: 0 0 2rem;
+  color: #fff;
+  font-family: "RightGrotesk", monospace;
+  font-size: clamp(1.8rem, 5vw, 5rem);
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.envelope-button,
+.hero-envelope,
+.gossip-envelope {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.envelope-button img {
+  width: clamp(150px, 22vw, 245px);
+  filter: drop-shadow(0 22px 28px rgba(0, 0, 0, 0.35));
+}
+
+.landing {
+  background: var(--cream);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.nav-bar {
+  position: absolute;
+  top: clamp(22px, 4vw, 44px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  gap: clamp(10px, 2vw, 22px);
+  align-items: center;
+}
+
+.nav-pill {
+  min-width: 112px;
+  height: 46px;
+  border: 2px solid var(--blue);
+  border-radius: 999px;
+  background: var(--pill);
+  color: var(--blue);
+  cursor: pointer;
+  font-family: "RightGrotesk", monospace;
+  font-size: 1.05rem;
+  box-shadow: 5px 5px 0 var(--blue);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.nav-pill:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 var(--blue);
+}
+
+.hero-envelope-wrap {
+  position: absolute;
+  top: clamp(90px, 15vh, 140px);
+  right: clamp(28px, 8vw, 110px);
+  z-index: 4;
+}
+
+.hero-envelope img {
+  width: clamp(105px, 14vw, 172px);
+  transform: rotate(9deg);
+  filter: drop-shadow(0 12px 20px rgba(0, 21, 255, 0.16));
+}
+
+.hero-envelope:hover img {
+  animation: wiggle 480ms ease-in-out infinite;
+}
+
+.landing-title {
+  width: min(1080px, 94vw);
+  text-align: center;
+  color: var(--blue);
+  display: grid;
+  gap: 0;
+}
+
+.xoxo {
+  font-family: "RightGrotesk", monospace;
+  font-size: clamp(8rem, 24vw, 21rem);
+  line-height: 0.72;
+}
+
+.gossip {
+  margin-top: -0.05em;
+  opacity: 0.2;
+  font-size: clamp(5.2rem, 17vw, 17rem);
+  line-height: 0.75;
+}
+
+.tea-section {
+  min-height: 220vh;
+  background:
+    radial-gradient(circle at 14% 15%, rgba(217, 220, 255, 0.95), transparent 28%),
+    radial-gradient(circle at 86% 56%, rgba(0, 21, 255, 0.18), transparent 32%),
+    var(--cream);
+  padding: 20vh 5vw 0;
+}
+
+.eyes {
+  position: sticky;
+  top: 34vh;
+  width: 260px;
+  height: 116px;
+  margin: 0 auto;
+  z-index: 10;
+  display: flex;
+  gap: 26px;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.eye {
+  width: 105px;
+  height: 105px;
+  border: 5px solid var(--blue);
+  border-radius: 50%;
+  background: #fff;
+  position: relative;
+  box-shadow: 7px 7px 0 var(--pill);
+}
+
+.pupil {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: var(--blue);
+  position: absolute;
+  left: 35px;
+  top: 35px;
+  transform: translate(var(--look-x, 0), var(--look-y, 0));
+  transition: transform 80ms linear;
+}
+
+.tea-stage {
+  position: relative;
+  width: min(1120px, 100%);
+  min-height: 150vh;
+  margin: -6rem auto 0;
+}
+
+.drag-item {
+  position: absolute;
+  touch-action: none;
+  user-select: none;
+}
+
+.paper-note {
+  width: clamp(210px, 24vw, 310px);
+  min-height: 150px;
+  padding: 28px 26px;
+  background: var(--paper);
+  border: 2px solid var(--blue);
+  color: var(--ink);
+  font-family: "RightGrotesk", monospace;
+  font-size: clamp(1rem, 1.7vw, 1.28rem);
+  line-height: 1.35;
+  box-shadow: 10px 10px 0 var(--blue);
+  transform: rotate(-4deg);
+}
+
+.note-left {
+  top: 5%;
+  left: 2%;
+}
+
+.gossip-envelope img {
+  width: clamp(112px, 16vw, 190px);
+  pointer-events: none;
+}
+
+.gossip-envelope {
+  top: 22%;
+  left: 59%;
+  z-index: 3;
+}
+
+.envelope-two {
+  top: 58%;
+  left: 14%;
+  transform: rotate(-12deg);
+}
+
+.envelope-three {
+  top: 86%;
+  left: 68%;
+  transform: rotate(13deg);
+}
+
+.hidden-note {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(80px, -20px) rotate(3deg) scale(0.86);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+#note-a {
+  top: 23%;
+  left: 72%;
+}
+
+#note-b {
+  top: 59%;
+  left: 28%;
+}
+
+#note-c {
+  top: 88%;
+  left: 44%;
+}
+
+.hidden-note.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(0, 0) rotate(3deg) scale(1);
+}
+
+.marquee {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 48px;
+  overflow: hidden;
+  background: var(--blue);
+  color: var(--cream);
+  border-block: 3px solid var(--blue);
+  height: 76px;
+  display: flex;
+  align-items: center;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 60px;
+  white-space: nowrap;
+  animation: marquee 14s linear infinite;
+  font-family: "Bibliophile", cursive;
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+}
+
+.about {
+  background: var(--cream);
+  min-height: 112vh;
+  padding-top: 120px;
+  overflow: hidden;
+}
+
+.phone-scene {
+  position: relative;
+  width: min(410px, 88vw);
+  margin: 0 auto;
+}
+
+.phone {
+  width: 100%;
+  display: block;
+  filter: drop-shadow(0 28px 32px rgba(0, 21, 255, 0.22));
+}
+
+.phone-screen {
+  position: absolute;
+  left: 15.2%;
+  top: 20.4%;
+  width: 69.7%;
+  height: 25.2%;
+  padding: 22px 18px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.22), transparent 16%),
+    repeating-radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 4px),
+    linear-gradient(145deg, #061ed1, #000751 62%, #020530);
+  color: #dce5ff;
+  font-family: "Nokia", monospace;
+  font-size: clamp(0.9rem, 2.2vw, 1.18rem);
+  line-height: 1.42;
+  text-shadow: 0 0 8px rgba(217, 220, 255, 0.8);
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1em;
+  margin-left: 3px;
+  background: #dce5ff;
+  animation: blink 780ms steps(1) infinite;
+  vertical-align: text-bottom;
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(9deg) translateX(0);
+  }
+  25% {
+    transform: rotate(2deg) translateX(-3px);
+  }
+  75% {
+    transform: rotate(15deg) translateX(3px);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .nav-bar {
+    width: min(94vw, 420px);
+    justify-content: center;
+  }
+
+  .nav-pill {
+    min-width: 86px;
+    height: 42px;
+  }
+
+  .hero-envelope-wrap {
+    top: 92px;
+    right: 20px;
+  }
+
+  .tea-section {
+    min-height: 240vh;
+    padding-inline: 3vw;
+  }
+
+  .eyes {
+    width: 210px;
+    gap: 16px;
+  }
+
+  .eye {
+    width: 86px;
+    height: 86px;
+  }
+
+  .pupil {
+    width: 28px;
+    height: 28px;
+    left: 28px;
+    top: 28px;
+  }
+
+  #note-a,
+  #note-b,
+  #note-c {
+    left: 38%;
+  }
+}
